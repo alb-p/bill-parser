@@ -1,6 +1,6 @@
-# Bill Extractor
+# Bill Parser
 
-`bill-extractor` is a Python tool that automatically extracts structured data from electricity bill PDFs and converts it into CSV format for easy analysis.
+`bill-parser` is a Python tool that automatically extracts structured data from electricity bill PDFs and converts it into CSV format for easy analysis.
 
 ## 🚀 Features
 
@@ -20,8 +20,8 @@
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/bill-extractor.git
-cd bill-extractor
+git clone https://github.com/your-username/bill-parser.git
+cd bill-parser
 python -m venv env
 source env/bin/activate  # or 'env\Scripts\activate' on Windows
 pip install -r requirements.txt
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ## 📁 Project Structure
 
 ```
-bill-extractor/
+bill-parser/
 ├── main.py
 ├── utils/
 │   └── extractor.py
