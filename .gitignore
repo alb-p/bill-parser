@@ -6,7 +6,6 @@ __pycache__/
 # Output files and processed data
 *.pdf
 *.csv
-*.txt
 *.log
 
 # Output folder contents (except .gitkeep)
