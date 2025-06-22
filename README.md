@@ -1,71 +1,74 @@
-# My Python Project
+# Bill Extractor
 
-This is a basic Python project using `venv` for virtual environment management.
+`bill-extractor` is a Python tool that automatically extracts structured data from electricity bill PDFs and converts it into CSV format for easy analysis.
 
-## 🐍 Requirements
+## 🚀 Features
 
-- Python 3.11 or higher
-- `venv` module (included by default in Python 3.3+)
+- Extracts:
+  - Charges for energy, meter management, taxes, and total
+  - Consumption by time bands (F1, F2, F3, Total)
+  - Billing period (start/end dates)
+- Supports multiple PDF files
+- Exports data directly to CSV
+- Saves full raw text output for debugging
 
-## 📦 Setup Instructions
+## 🛠️ Requirements
 
-### 1. Clone the repository
+- Python 3.7+
+- [pdfplumber](https://github.com/jsvine/pdfplumber)
 
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-```
-
-### 2. Create and activate the virtual environment
-
-**On Linux/macOS:**
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-**On Windows:**
-
-```cmd
-python -m venv venv
-venv\Scripts\activate
-```
-
-### 3. Install dependencies
-
-If a `requirements.txt` file is provided:
+## 📦 Installation
 
 ```bash
+git clone https://github.com/your-username/bill-extractor.git
+cd bill-extractor
+python -m venv env
+source env/bin/activate  # or 'env\Scripts\activate' on Windows
 pip install -r requirements.txt
 ```
 
-### 4. Run the project
+## 📁 Project Structure
+
+```
+bill-extractor/
+├── main.py
+├── utils/
+│   └── extractor.py
+├── resources/
+│   ├── input/
+│   │   └── conf.json
+│   ├── documents/
+│   │   └── 2025_05.pdf
+│   └── output/
+│       ├── extracted_data.csv
+│       └── full_text.txt
+```
+
+## ⚙️ Usage
+
+Edit `resources/input/conf.json` to list the PDF files you want to analyze:
+
+```json
+{
+  "files_to_analyze": [
+    {
+      "filename": "2025_05.pdf"
+    }
+  ]
+}
+```
+
+Then run:
 
 ```bash
 python main.py
 ```
 
-*(Replace `main.py` with your entry point if different.)*
+## 🧪 Output
 
-## 📄 Managing Dependencies
+- Extracted CSV: `resources/output/extracted_data.csv`
+- Raw full text: `resources/output/full_text.txt`
 
-To add new dependencies:
+## 📄 License
 
-```bash
-pip install <package-name>
-pip freeze > requirements.txt
-```
-
-## 🧼 Deactivating the virtual environment
-
-```bash
-deactivate
-```
-
-## 🗑️ Removing the virtual environment
-
-```bash
-rm -rf venv  # On Unix/macOS
-rd /s /q venv  # On Windows CMD
-```
+MIT
